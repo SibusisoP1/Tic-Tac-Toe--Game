@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 100vw;
+  background-color: ${(props) => props.theme.colors.primary};
+  padding: 0 2rem;
+`;
+
 export const Title = styled.h1`
   color: ${(props) => props.theme.colors.text};
   font-size: 3rem;
@@ -10,7 +21,7 @@ export const Title = styled.h1`
 export const Subtitle = styled.h2`
   color: ${(props) => props.theme.colors.text};
   font-size: 1.5rem;
-  font-family: "poppins", sans-serif;
-  font-weight: 200;
+  font-weight: 100;
   background-color: transparent;
+  padding: 10px;
 `;

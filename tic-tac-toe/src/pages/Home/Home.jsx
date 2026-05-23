@@ -1,13 +1,14 @@
-import { Container } from "./Home.styled.js";
-import { Subtitle, Title } from "../../styles/General.styled.js";
-import Header from "../../components/Header/header.jsx";
+import { Subtitle, Title, Container } from "../../styles/General.styled.js";
+import Button from "../../components/Button/Button.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <Container>
-      <Header />
       <Title>Tic Tac Toe</Title>
       <Subtitle>Play with your friends , higher score wins</Subtitle>
+      <Button onClick={() => navigate("/game-on")}>Play Now</Button>
     </Container>
   );
 };
