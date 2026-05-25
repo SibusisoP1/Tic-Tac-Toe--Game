@@ -2,26 +2,43 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${(props) => (props.$coloumn ? "column" : "row")};
   align-items: center;
   justify-content: center;
   height: 80vh;
   width: 100vw;
   background-color: ${(props) => props.theme.colors.primary};
   padding: 0 2rem;
+  text-align: center;
+
+  ${(props) => props.theme.media.mobile} {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const Title = styled.h1`
-  color: ${(props) => props.theme.colors.text};
+  color: ${(props) =>
+    props.$primary ? props.theme.colors.primary : props.theme.colors.secondary};
   font-size: 3rem;
   font-family: "Pacifico", cursive;
   background-color: transparent;
 `;
 
-export const Subtitle = styled.h2`
-  color: ${(props) => props.theme.colors.text};
+export const Subtitle = styled.h1`
+  color: ${(props) =>
+    props.$primary ? props.theme.colors.primary : props.theme.colors.secondary};
   font-size: 1.5rem;
-  font-weight: 100;
+  font-weight: 200;
+  background-color: transparent;
+  padding: 10px;
+`;
+
+export const Text = styled.p`
+  color: ${(props) =>
+    props.$primary ? props.theme.colors.secondary : props.theme.colors.text};
+  font-size: 1.2rem;
   background-color: transparent;
   padding: 10px;
 `;
